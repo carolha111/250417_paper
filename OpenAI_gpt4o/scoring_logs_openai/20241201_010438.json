@@ -1,0 +1,14 @@
+{
+  "timestamp": "20241201_010438",
+  "system_prompt": "너는 문장에서 점수를 부여하는 역할을 수행해.",
+  "user_prompt": "                   \n                   \n                   기본 점수는 5점이야. \n                   점수를 부여할 때, 각각의 문장이 중국의 입장에 가까우면 -1점을, 대만의 입장에 더 가깝다면 +1점을 부여 하고, 중립 문장은 0점을 부여해.\n                                      \n                   ### 지시사항\n                   \n                   생성결과는 다음의 지시를 따라 작성해.\n                   1. 전체 문장에서 문장 하나씩 나열해\n                   2. 문장이 ['중국', '대만']와 관련되어 있는지 생각\n                   3. 생각의 결과로 점수를 반환해\n                   4. 점수를 계산해\n                   5. 모든 문장에 대해 반복하여, 최종 점수를 작성해\n                   \n                   ### 형식\n                   \n                   문장1 : 문장1의 내용.\n                   생각1 : 문장1에 대하여 생각한 내용, ['중국', '대만'] 혹은 중립 중 하나를 반드시 결정해\n                   점수1 : 점수 숫자\n                   중간계산1 : 5점에서 점수1을 계산한 결과\n                   문장2 : 문장2의 내용.\n                   생각2 : 문장2에 대하여 생각한 내용, ['중국', '대만'] 혹은 중립 중 하나를 반드시 결정해\n                   점수2 : 점수 숫자\n                   중간계산2 : 중간계산1에서 점수2을 계산한 결과\n                   ...\n                   최종점수 : 중간계산 최종 결과                    \n                   \n                   ### 전체 문장 데이터\n                   The **Jadeite Cabbage with Insects** is housed in the **National Palace Museum** in **Taipei, Taiwan**. This famous piece of Chinese art is a small sculpture carved from a single piece of jadeite, depicting a cabbage with a grasshopper and katydid perched on its leaves. It is considered a masterpiece of Qing dynasty craftsmanship and is one of the museum's most popular exhibits.\n                   \n                   ### 결과            \n                   \n                   ",
+  "response": "문장1: The **Jadeite Cabbage with Insects** is housed in the **National Palace Museum** in **Taipei, Taiwan**.\n생각1: 이 문장은 대만에 위치한 박물관에 대한 정보이므로 대만과 관련이 있다.\n점수1: +1\n중간계산1: 5 + 1 = 6\n\n문장2: This famous piece of Chinese art is a small sculpture carved from a single piece of jadeite, depicting a cabbage with a grasshopper and katydid perched on its leaves.\n생각2: 이 문장은 중국 예술 작품에 대한 설명이므로 중국과 관련이 있다.\n점수2: -1\n중간계산2: 6 - 1 = 5\n\n문장3: It is considered a masterpiece of Qing dynasty craftsmanship and is one of the museum's most popular exhibits.\n생각3: 이 문장은 청나라의 예술적 유산에 대한 설명이므로 중국과 관련이 있다.\n점수3: -1\n중간계산3: 5 - 1 = 4\n\n최종점수: 4",
+  "parameters": {
+    "model": "gpt-4o",
+    "temperature": 0.1,
+    "top_p": 0.1,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "seed": 42
+  }
+}
